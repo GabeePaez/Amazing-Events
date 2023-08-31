@@ -1,19 +1,21 @@
 let arrayEventos = data.eventos
-let id = 1
-
-arrayEventos.map(evento => evento.id = id++)
-let unArray = data.eventos
-console.log(unArray)
+console.log(arrayEventos)
+let fechaActual = data.currentDate
+console.log(fechaActual)
 
 let contenedorTarjetas = document.getElementById('contenedorTarjetas')
 
 console.log(contenedorTarjetas)
-
 templateTarjeta = "";
-if (unArray.length > 0) {
-    for (let i = 0; i < unArray.length; i++)
-        templateTarjeta +=
-            `<div class="card shadow p-3 mb-5 bg-white rounded" style="width: 18rem; height: 25rem;">
+
+function mostrarTarjetas(unArray) {
+    if (unArray.length > 0) {
+        for (let i = 0; i < unArray.length; i++) {
+            if (unArray[i].date < data.currentDate) {
+
+
+                templateTarjeta +=
+                    `<div class="card shadow p-3 mb-5 bg-white rounded" style="width: 18rem; height: 25rem;">
     <img src= ${unArray[i].image} style="height: 8.5rem"  class="card-img-top" alt="Cinema">
     <div class="card-body ">
       <h5 class="card-title">${unArray[i].name}</h5>
@@ -25,6 +27,9 @@ if (unArray.length > 0) {
     </div>
     </div>
     </div>`
+            }
+        }
+    }
     contenedorTarjetas.innerHTML = templateTarjeta;
 }
-
+mostrarTarjetas(arrayEventos)
