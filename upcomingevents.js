@@ -23,7 +23,7 @@ function mostrarTarjetas(unArray) {
       <p class="card-text"> ${unArray[i].date}</p>
       <div class="vermas container-fluid">
        <p class="mb-0 m-1"> $ ${unArray[i].price}</p> 
-       <a href="./details.html?id=${unArray[i].id}" class="btn btn-primary">Details</a>
+       <a href="./details.html?id=${unArray[i]._id}" class="btn btn-primary">Details</a>
     </div>
     </div>
     </div>`

@@ -88,30 +88,29 @@
     </div>
     <br><br>
     <div class="contenedor-de-categorias">
-
       <article class="categorias">
-          <div class="botonera">
-            <div class="form-check form-check-inline">
-              <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
-              <label class="form-check-label" for="inlineRadio1">Category</label>
-            </div>
-            <div class="form-check form-check-inline">
-              <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-              <label class="form-check-label" for="inlineRadio2">Category</label>
-            </div>
-            <div class="form-check form-check-inline">
-              <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
-              <label class="form-check-label" for="inlineRadio3">Category</label>
-            </div>
-            <div class="form-check form-check-inline">
-              <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio4" value="option4">
-              <label class="form-check-label" for="inlineRadio4">Category</label>
-            </div>
-            <div class="form-check form-check-inline">
-              <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio5" value="option6">
-              <label class="form-check-label" for="inlineRadio5">Category</label>
-            </div>
+        <div id="contenedorChecks" class="botonera">
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+            <label class="form-check-label" for="inlineRadio1">Category</label>
           </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+            <label class="form-check-label" for="inlineRadio2">Category</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
+            <label class="form-check-label" for="inlineRadio3">Category</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio4" value="option4">
+            <label class="form-check-label" for="inlineRadio4">Category</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio5" value="option6">
+            <label class="form-check-label" for="inlineRadio5">Category</label>
+          </div>
+        </div>
       </article>
 
       <div class="search categorias">
@@ -122,12 +121,13 @@
                 class="bi bi-search"></i></button></span>
         </div>
       </div>
-</div>
-<article>
-  <div class="row row-cols-1 row-cols-md-2 g-4 container-fluid m-0 flex-lg-row" style="display: flex; gap: 1rem ;"
-    id="contenedorTarjetas">
-  </div>
-</article>
+
+    </div>
+    <article>
+      <div class="row row-cols-1 row-cols-md-2 g-4 container-fluid m-0 flex-lg-row" style="display: flex; gap: 1rem ;"
+        id="contenedorTarjetas"></div>
+
+    </article>
   </main>
   <br>
 
@@ -150,6 +150,7 @@
     crossorigin="anonymous"></script>
     <script src="./data.js"></script>
     <script src="./pastevents.js"></script>
+    <script src="./filtros.js"></script>
 </body>
 
 </html>
