@@ -30,6 +30,7 @@ if (unArray.length > 0) {
 
 
 function mostrarTarjetas(unArray) {
+    console.log(unArray)
     contenedorTarjetas.innerHTML = ""
     let templateTarjeta = ""
     if (unArray.length > 0) {

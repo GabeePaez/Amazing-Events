@@ -33,18 +33,24 @@ imprimirChecksEnHTML(catSinRep, $contenedorChecks)
 
 
 function eventoCheckbox(){
-const checked = document.querySelectorAll('input[type=checkbox]:checked')
+const checked = document.querySelectorAll("input[type='checkbox']:checked")
+console.log(checked)
 const arrayChecked = Array.from( checked ).map( checkbox => checkbox.value )
 console.log(arrayChecked)
-console.log(data.eventos)
+if(arrayChecked.length > 0){
+    let objetosFiltradosPorCheck = arrayEventos.filter(evento => arrayChecked.includes(evento.category))
+    return objetosFiltradosPorCheck
+} else{
+    console.log(data.eventos)
+    return data.eventos
+}
 }
 
-$contenedorChecks.addEventListener("input", eventoCheckbox)
+//$contenedorChecks.addEventListener("input", eventoCheckbox)
 
 $contenedorChecks.addEventListener("change", (e)=> {
-    let array = Array.from(document.querySelectorAll("input[type='checkbox']:checked")).map(check => check.value)
-    let objetosFiltradosPorCheck = arrayEventos.filter(evento => array.includes(evento.category))
-    mostrarTarjetas(objetosFiltradosPorCheck, contenedorTarjetas)
+    let returnFiltroCruzado = filtroCruzado(data.eventos, $search)
+    mostrarTarjetas(returnFiltroCruzado)
 })
 
 
@@ -52,8 +58,9 @@ const $search = document.querySelector('input[type="search"]')
 console.log($search)
 
 $search.addEventListener("keyup", () => {
-    const returnFiltroSearch = filtroPorSearch(data.eventos, $search)
-    mostrarTarjetas(returnFiltroSearch)
+    //const returnFiltroSearch = filtroPorSearch(data.eventos, $search)
+    let returnFiltroCruzado = filtroCruzado(data.eventos, $search)
+    mostrarTarjetas(returnFiltroCruzado)
 })
 
 function filtroPorSearch(eventos, input) {
@@ -63,4 +70,8 @@ function filtroPorSearch(eventos, input) {
     return arrayFiltradosSearch
 }
 
-
+function filtroCruzado(array, input){
+    let returnEventoCheckbox = eventoCheckbox(array)
+    let returnFiltroPorSearch = filtroPorSearch(returnEventoCheckbox, input)
+    return returnFiltroPorSearch
+}
